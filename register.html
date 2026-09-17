@@ -1,223 +1,203 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
-```
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>KLECommerce - Register</title>
+    <title>KLECommerce - Register</title>
 
-<link rel="stylesheet" href="style.css">
-```
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
 <body>
 
-```
-<div class="login-page">
+    <div class="login-page">
 
-    <div class="login-container">
+        <div class="login-container">
 
-        <!-- LEFT SIDE -->
+            <!-- LEFT SIDE -->
+            <div class="login-left">
 
-        <div class="login-left">
+                <h1>KLECommerce</h1>
 
-            <h1>KLECommerce</h1>
+                <h2>Join KLECommerce!</h2>
 
-            <h2>Join KLECommerce!</h2>
+                <p>
+                    Create your account and discover
+                    amazing products and exciting offers.
+                </p>
 
-            <p>
-                Create your account and discover
-                amazing products and exciting offers.
-            </p>
-
-            <div class="shopping-icon">
-                🛍️
-            </div>
-
-            <div class="login-features">
-
-                <div>
-                    ✓ Easy Shopping
+                <div class="shopping-icon">
+                    🛍️
                 </div>
 
-                <div>
-                    ✓ Secure Payments
-                </div>
+                <div class="login-features">
 
-                <div>
-                    ✓ Fast Delivery
+                    <div>✓ Easy Shopping</div>
+
+                    <div>✓ Secure Payments</div>
+
+                    <div>✓ Fast Delivery</div>
+
                 </div>
 
             </div>
 
-        </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="login-box register-box">
+
+                <h2>Create Account</h2>
+
+                <p class="login-subtitle">
+                    Register to start shopping
+                </p>
 
 
-        <!-- RIGHT SIDE -->
+                <form onsubmit="register(event)">
 
-        <div class="login-box register-box">
+                    <!-- USERNAME -->
+                    <label for="registerUsername">
+                        Username
+                    </label>
 
-            <h2>Create Account</h2>
+                    <div class="input-box">
 
-            <p class="login-subtitle">
-                Register to start shopping
-            </p>
+                        <span>👤</span>
 
+                        <input
+                            type="text"
+                            id="registerUsername"
+                            placeholder="Enter your username"
+                            required
+                        >
 
-            <form onsubmit="register(event)">
-
-
-                <!-- USERNAME -->
-
-                <label for="registerUsername">
-                    Username
-                </label>
-
-                <div class="input-box">
-
-                    <span>👤</span>
-
-                    <input
-                        type="text"
-                        id="registerUsername"
-                        placeholder="Enter your username"
-                        required
-                    >
-
-                </div>
+                    </div>
 
 
-                <!-- EMAIL -->
+                    <!-- EMAIL -->
+                    <label for="registerEmail">
+                        Email
+                    </label>
 
-                <label for="registerEmail">
-                    Email
-                </label>
+                    <div class="input-box">
 
-                <div class="input-box">
+                        <span>✉️</span>
 
-                    <span>✉️</span>
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
 
-                    <input
-                        type="email"
-                        id="registerEmail"
-                        placeholder="Enter your email"
-                        required
-                    >
-
-                </div>
+                    </div>
 
 
-                <!-- PASSWORD -->
+                    <!-- PASSWORD -->
+                    <label for="registerPassword">
+                        Password
+                    </label>
 
-                <label for="registerPassword">
-                    Password
-                </label>
+                    <div class="input-box">
 
-                <div class="input-box">
+                        <span>🔒</span>
 
-                    <span>🔒</span>
+                        <input
+                            type="password"
+                            id="registerPassword"
+                            placeholder="Create a password"
+                            required
+                        >
 
-                    <input
-                        type="password"
-                        id="registerPassword"
-                        placeholder="Create a password"
-                        required
-                    >
+                        <button
+                            type="button"
+                            class="show-password"
+                            onclick="toggleRegisterPassword()"
+                        >
+                            👁
+                        </button>
 
+                    </div>
+
+
+                    <!-- CONFIRM PASSWORD -->
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <span>🔐</span>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            onclick="toggleConfirmPassword()"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+
+                    <!-- CREATE ACCOUNT BUTTON -->
                     <button
-                        type="button"
-                        class="show-password"
-                        onclick="toggleRegisterPassword()">
-
-                        👁
-
+                        type="submit"
+                        class="login-button register-button"
+                    >
+                        Create Account
                     </button>
 
-                </div>
+                </form>
 
 
-                <!-- CONFIRM PASSWORD -->
+                <!-- LOGIN LINK -->
+                <p class="register-text">
 
-                <label for="confirmPassword">
-                    Confirm Password
-                </label>
+                    Already have an account?
 
-                <div class="input-box">
+                    <a href="login.html">
+                        Login
+                    </a>
 
-                    <span>🔐</span>
-
-                    <input
-                        type="password"
-                        id="confirmPassword"
-                        placeholder="Confirm your password"
-                        required
-                    >
-
-                    <button
-                        type="button"
-                        class="show-password"
-                        onclick="toggleConfirmPassword()">
-
-                        👁
-
-                    </button>
-
-                </div>
+                </p>
 
 
-                <!-- REGISTER BUTTON -->
-
-                <button
-                    type="submit"
-                    class="login-button register-button">
-
-                    Create Account
-
-                </button>
-
-            </form>
-
-
-            <!-- LOGIN -->
-
-            <p class="register-text">
-
-                Already have an account?
-
-                <a href="login.html">
-                    Login
+                <!-- HOME LINK -->
+                <a
+                    href="index.html"
+                    class="back-home"
+                >
+                    ← Back to KLECommerce
                 </a>
 
-            </p>
-
-
-            <!-- HOME -->
-
-            <a
-                href="index.html"
-                class="back-home">
-
-                ← Back to KLECommerce
-
-            </a>
+            </div>
 
         </div>
 
     </div>
 
-</div>
 
-
-<script src="script.js"></script>
-```
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
 
 </body>
-
 </html>

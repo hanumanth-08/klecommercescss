@@ -1,127 +1,235 @@
-/* ==========================================
-KLECommerce LOGIN
-========================================== */
+// =========================================
+// KLECOMMERCE LOGIN & REGISTER
+// =========================================
+
+
+// =========================================
+// LOGIN FUNCTION
+// =========================================
 
 function login(event) {
 
-```
-event.preventDefault();
-
-let username =
-    document.getElementById("loginUsername").value.trim();
-
-let password =
-    document.getElementById("loginPassword").value;
+    // Stop the form from refreshing the page
+    event.preventDefault();
+    alert("Login Successful!");
+    window.location.href = "index.html";
 
 
-let savedUsername =
-    localStorage.getItem("kle_username");
+    // Get username and password
+    let username =
+        document.getElementById("loginUsername").value.trim();
 
-let savedPassword =
-    localStorage.getItem("kle_password");
+    let password =
+        document.getElementById("loginPassword").value;
 
 
-if (username === savedUsername &&
-    password === savedPassword) {
+    // Get registered user details
+    let savedUsername =
+        localStorage.getItem("kle_username");
 
+    let savedPassword =
+        localStorage.getItem("kle_password");
+
+
+    // Check login details
+    if (
+        username === savedUsername &&
+        password === savedPassword
+    ) {
+
+        // Save login status
+        localStorage.setItem(
+            "kle_loggedin",
+            "true"
+        );
+
+
+        // Show success message
+        alert("Login Successful!");
+
+
+        // Redirect to homepage
+        window.location.href = "index.html";
+
+    }
+
+    else {
+
+        // Wrong username or password
+        alert("Invalid Username or Password!");
+
+    }
+
+}
+
+
+
+// =========================================
+// REGISTER FUNCTION
+// =========================================
+
+function register(event) {
+
+    // Stop form from refreshing
+    event.preventDefault();
+    alert("Account Created Successfully!");
+    window.location.href = "index.html";
+
+
+    // Get form values
+    let username =
+        document.getElementById("registerUsername").value.trim();
+
+    let email =
+        document.getElementById("registerEmail").value.trim();
+
+    let password =
+        document.getElementById("registerPassword").value;
+
+    let confirmPassword =
+        document.getElementById("confirmPassword").value;
+
+
+    // Check password match
+    if (password !== confirmPassword) {
+
+        alert("Passwords do not match!");
+
+        return;
+    }
+
+
+    // Check password length
+    if (password.length < 6) {
+
+        alert(
+            "Password must contain at least 6 characters!"
+        );
+
+        return;
+    }
+
+
+    // Check existing username
+    let existingUsername =
+        localStorage.getItem("kle_username");
+
+
+    if (existingUsername === username) {
+
+        alert("Username already exists!");
+
+        return;
+    }
+
+
+    // Save user information
+    localStorage.setItem(
+        "kle_username",
+        username
+    );
+
+    localStorage.setItem(
+        "kle_email",
+        email
+    );
+
+    localStorage.setItem(
+        "kle_password",
+        password
+    );
+
+
+    // Mark user as logged in
     localStorage.setItem(
         "kle_loggedin",
         "true"
     );
 
-    alert("Login Successful!");
 
+    // Success message
+    alert("Account Created Successfully!");
+
+
+    // Redirect to homepage
     window.location.href = "index.html";
 
-} else {
-
-    alert("Invalid Username or Password!");
-
-}
-```
-
 }
 
-/* ==========================================
-KLECommerce REGISTER
-========================================== */
-
-function register(event) {
-
-```
-event.preventDefault();
-
-let username =
-    document.getElementById("registerUsername").value.trim();
-
-let email =
-    document.getElementById("registerEmail").value.trim();
-
-let password =
-    document.getElementById("registerPassword").value;
-
-let confirmPassword =
-    document.getElementById("confirmPassword").value;
 
 
-/* Password check */
+// =========================================
+// SHOW / HIDE LOGIN PASSWORD
+// =========================================
 
-if (password !== confirmPassword) {
+function togglePassword() {
 
-    alert("Passwords do not match!");
+    let password =
+        document.getElementById("loginPassword");
 
-    return;
+
+    if (password.type === "password") {
+
+        password.type = "text";
+
+    }
+
+    else {
+
+        password.type = "password";
+
+    }
 
 }
 
 
-/* Password length */
 
-if (password.length < 6) {
+// =========================================
+// SHOW / HIDE REGISTER PASSWORD
+// =========================================
 
-    alert("Password must contain at least 6 characters!");
+function toggleRegisterPassword() {
 
-    return;
+    let password =
+        document.getElementById("registerPassword");
+
+
+    if (password.type === "password") {
+
+        password.type = "text";
+
+    }
+
+    else {
+
+        password.type = "password";
+
+    }
 
 }
 
 
-/* Check username */
 
-let existingUsername =
-    localStorage.getItem("kle_username");
+// =========================================
+// SHOW / HIDE CONFIRM PASSWORD
+// =========================================
 
+function toggleConfirmPassword() {
 
-if (existingUsername === username) {
-
-    alert("Username already exists!");
-
-    return;
-
-}
+    let password =
+        document.getElementById("confirmPassword");
 
 
-/* Save account */
+    if (password.type === "password") {
 
-localStorage.setItem(
-    "kle_username",
-    username
-);
+        password.type = "text";
 
-localStorage.setItem(
-    "kle_email",
-    email
-);
+    }
 
-localStorage.setItem(
-    "kle_password",
-    password
-);
+    else {
 
+        password.type = "password";
 
-alert("Registration Successful!");
-
-window.location.href = "login.html";
-```
+    }
 
 }

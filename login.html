@@ -1,192 +1,162 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-```
-<meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>KLECommerce - Login</title>
-
-<link rel="stylesheet" href="style.css">
-```
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLECommerce - Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-```
-<div class="login-page">
+    <div class="login-page">
 
-    <div class="login-container">
+        <div class="login-container">
 
-        <!-- LEFT SIDE -->
+            <!-- LEFT SIDE -->
+            <div class="login-left">
 
-        <div class="login-left">
+                <h1>KLECommerce</h1>
 
-            <h1>KLECommerce</h1>
+                <h2>Welcome Back!</h2>
 
-            <h2>Welcome Back!</h2>
+                <p>
+                    Login to your account and continue
+                    your shopping journey.
+                </p>
 
-            <p>
-                Login to your account and continue
-                your shopping journey.
-            </p>
-
-            <div class="shopping-icon">
-                🛒
-            </div>
-
-            <div class="login-features">
-
-                <div>
-                    ✓ Easy Shopping
+                <div class="shopping-icon">
+                    🛒
                 </div>
 
-                <div>
-                    ✓ Secure Payments
-                </div>
-
-                <div>
-                    ✓ Fast Delivery
+                <div class="login-features">
+                    <div>✓ Easy Shopping</div>
+                    <div>✓ Secure Payments</div>
+                    <div>✓ Fast Delivery</div>
                 </div>
 
             </div>
 
-        </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="login-box">
+
+                <h2>Login</h2>
+
+                <p class="login-subtitle">
+                    Enter your details to continue
+                </p>
 
 
-        <!-- RIGHT SIDE -->
+                <form onsubmit="login(event)">
 
-        <div class="login-box">
-
-            <h2>Login</h2>
-
-            <p class="login-subtitle">
-                Enter your details to continue
-            </p>
-
-
-            <form onsubmit="login(event)">
-
-                <!-- USERNAME -->
-
-                <label for="loginUsername">
-                    Username
-                </label>
-
-                <div class="input-box">
-
-                    <span>👤</span>
-
-                    <input
-                        type="text"
-                        id="loginUsername"
-                        placeholder="Enter your username"
-                        required
-                    >
-
-                </div>
-
-
-                <!-- PASSWORD -->
-
-                <label for="loginPassword">
-                    Password
-                </label>
-
-                <div class="input-box">
-
-                    <span>🔒</span>
-
-                    <input
-                        type="password"
-                        id="loginPassword"
-                        placeholder="Enter your password"
-                        required
-                    >
-
-                    <button
-                        type="button"
-                        class="show-password"
-                        onclick="togglePassword()">
-                        👁
-                    </button>
-
-                </div>
-
-
-                <!-- REMEMBER / FORGOT -->
-
-                <div class="login-options">
-
-                    <label class="remember">
-
-                        <input
-                            type="checkbox"
-                            id="rememberMe">
-
-                        Remember me
-
+                    <!-- USERNAME -->
+                    <label for="loginUsername">
+                        Username
                     </label>
 
-                    <a href="#">
-                        Forgot Password?
+                    <div class="input-box">
+
+                        <span>👤</span>
+
+                        <input
+                            type="text"
+                            id="loginUsername"
+                            placeholder="Enter your username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <span>🔒</span>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            onclick="togglePassword()"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+
+                    <!-- OPTIONS -->
+                    <div class="login-options">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                            >
+
+                            Remember me
+
+                        </label>
+
+                        <a href="#">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+                        Login
+                    </button>
+
+                </form>
+
+
+                <!-- REGISTER LINK -->
+                <p class="register-text">
+
+                    Don't have an account?
+
+                    <a href="register.html">
+                        Create Account
                     </a>
 
-                </div>
+                </p>
 
 
-                <!-- LOGIN BUTTON -->
-
-                <button
-                    type="submit"
-                    class="login-button">
-
-                    Login
-
-                </button>
-
-            </form>
-
-
-            <!-- REGISTER -->
-
-            <p class="register-text">
-
-                Don't have an account?
-
-                <a href="register.html">
-                    Create Account
+                <!-- HOME LINK -->
+                <a
+                    href="index.html"
+                    class="back-home"
+                >
+                    ← Back to KLECommerce
                 </a>
 
-            </p>
-
-
-            <!-- HOME -->
-
-            <a
-                href="index.html"
-                class="back-home">
-
-                ← Back to KLECommerce
-
-            </a>
+            </div>
 
         </div>
 
     </div>
 
-</div>
 
-
-<script src="script.js"></script>
-```
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
 
 </body>
-
 </html>
