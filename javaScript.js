@@ -1,59 +1,127 @@
-function register(event) {
-
-```
-event.preventDefault();
-
-let username = document.getElementById("registerUsername").value;
-let email = document.getElementById("registerEmail").value;
-let password = document.getElementById("registerPassword").value;
-let confirmPassword = document.getElementById("confirmPassword").value;
-
-if (password !== confirmPassword) {
-    alert("Passwords do not match!");
-    return;
-}
-
-if (password.length < 6) {
-    alert("Password must contain at least 6 characters!");
-    return;
-}
-
-// Store user temporarily in browser
-localStorage.setItem("username", username);
-localStorage.setItem("email", email);
-localStorage.setItem("password", password);
-
-alert("Registration successful!");
-
-window.location.href = "login.html";
-```
-
-}
+/* ==========================================
+KLECommerce LOGIN
+========================================== */
 
 function login(event) {
 
 ```
 event.preventDefault();
 
-let username = document.getElementById("loginUsername").value;
-let password = document.getElementById("loginPassword").value;
+let username =
+    document.getElementById("loginUsername").value.trim();
 
-let savedUsername = localStorage.getItem("username");
-let savedPassword = localStorage.getItem("password");
+let password =
+    document.getElementById("loginPassword").value;
 
-if (username === savedUsername && password === savedPassword) {
 
-    localStorage.setItem("loggedIn", "true");
+let savedUsername =
+    localStorage.getItem("kle_username");
 
-    alert("Login successful!");
+let savedPassword =
+    localStorage.getItem("kle_password");
+
+
+if (username === savedUsername &&
+    password === savedPassword) {
+
+    localStorage.setItem(
+        "kle_loggedin",
+        "true"
+    );
+
+    alert("Login Successful!");
 
     window.location.href = "index.html";
 
 } else {
 
-    alert("Invalid username or password!");
+    alert("Invalid Username or Password!");
 
 }
+```
+
+}
+
+/* ==========================================
+KLECommerce REGISTER
+========================================== */
+
+function register(event) {
+
+```
+event.preventDefault();
+
+let username =
+    document.getElementById("registerUsername").value.trim();
+
+let email =
+    document.getElementById("registerEmail").value.trim();
+
+let password =
+    document.getElementById("registerPassword").value;
+
+let confirmPassword =
+    document.getElementById("confirmPassword").value;
+
+
+/* Password check */
+
+if (password !== confirmPassword) {
+
+    alert("Passwords do not match!");
+
+    return;
+
+}
+
+
+/* Password length */
+
+if (password.length < 6) {
+
+    alert("Password must contain at least 6 characters!");
+
+    return;
+
+}
+
+
+/* Check username */
+
+let existingUsername =
+    localStorage.getItem("kle_username");
+
+
+if (existingUsername === username) {
+
+    alert("Username already exists!");
+
+    return;
+
+}
+
+
+/* Save account */
+
+localStorage.setItem(
+    "kle_username",
+    username
+);
+
+localStorage.setItem(
+    "kle_email",
+    email
+);
+
+localStorage.setItem(
+    "kle_password",
+    password
+);
+
+
+alert("Registration Successful!");
+
+window.location.href = "login.html";
 ```
 
 }
